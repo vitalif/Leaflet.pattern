@@ -116,21 +116,22 @@ exports.build = function (compsBase32, buildName) {
 	console.log('Concatenating ' + files.length + ' files...');
 
 	var copy = fs.readFileSync('src/copyright.js', 'utf8'),
-		intro = `(function (factory) {
-					if (typeof define === 'function' && define.amd) {
-						// AMD
-						define(['leaflet'], factory);
-					} else if (typeof module !== 'undefined') {
-						// Node/CommonJS
-						module.exports = factory(require('leaflet'));
-					} else {
-						// Browser globals
-						if (typeof window.L === 'undefined') {
-							throw new Error('Leaflet must be loaded first');
-						}
-						factory(window.L);
-					}
-				}(function (L) {`,
+		intro = 
+`(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['leaflet'], factory);
+	} else if (typeof module !== 'undefined') {
+		// Node/CommonJS
+		module.exports = factory(require('leaflet'));
+	} else {
+		// Browser globals
+		if (typeof window.L === 'undefined') {
+			throw new Error('Leaflet must be loaded first');
+		}
+		factory(window.L);
+	}
+}(function (L) {`,
 	    outro = '}));',
 	    newSrc = copy + intro + combineFiles(files) + outro,
 

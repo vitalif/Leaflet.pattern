@@ -4,20 +4,20 @@
  (c) 2015, Tyler Eastman
 */
 (function (factory) {
-					if (typeof define === 'function' && define.amd) {
-						// AMD
-						define(['leaflet'], factory);
-					} else if (typeof module !== 'undefined') {
-						// Node/CommonJS
-						module.exports = factory(require('leaflet'));
-					} else {
-						// Browser globals
-						if (typeof window.L === 'undefined') {
-							throw new Error('Leaflet must be loaded first');
-						}
-						factory(window.L);
-					}
-				}(function (L) {/*
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['leaflet'], factory);
+	} else if (typeof module !== 'undefined') {
+		// Node/CommonJS
+		module.exports = factory(require('leaflet'));
+	} else {
+		// Browser globals
+		if (typeof window.L === 'undefined') {
+			throw new Error('Leaflet must be loaded first');
+		}
+		factory(window.L);
+	}
+}(function (L) {/*
  * L.Pattern is the base class for fill patterns for leaflet Paths.
  */
 

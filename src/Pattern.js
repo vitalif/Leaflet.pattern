@@ -47,8 +47,8 @@ L.Pattern = L.Class.extend({
 		if (this.getEvents) {
             this._map.on(this.getEvents(), this);
 		}
-		this.fire('add');
-        this._map.fire('patternadd', {pattern: this});
+		this._map.fire('add');
+		this._map.fire('patternadd', {pattern: this});
 	},
 
 	onRemove: function () {

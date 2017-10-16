@@ -17,6 +17,7 @@ L.Pattern = L.Class.extend({
 		height: 8,
 		patternUnits: 'userSpaceOnUse',
 		patternContentUnits: 'userSpaceOnUse'
+		// id: <stamp>
 		// angle: <0 - 360>
 		// patternTransform: <transform-list>
 	},
@@ -168,7 +169,7 @@ L.Pattern = L.Pattern.extend({
 
 		if (!dom) { return; }
 
-		dom.setAttribute('id', L.stamp(this));
+		dom.setAttribute('id', options.id || L.stamp(this));
 		dom.setAttribute('x', options.x);
 		dom.setAttribute('y', options.y);
 		dom.setAttribute('width', options.width);

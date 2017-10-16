@@ -3,7 +3,7 @@
  */
 
 L.Pattern = L.Class.extend({
-	includes: [L.Mixin.Events],
+	includes: [L.Evented],
 
 	options: {
 		x: 0,

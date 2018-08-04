@@ -33,7 +33,6 @@
 
         // Default Stripes.
         var stripes = new L.StripePattern();
-        stripes.addTo(_map);
 
         var circle = new L.Circle(mapCenter, 400.0, {
             fillPattern: stripes,
@@ -52,7 +51,6 @@
             height: 0.2,
             angle: 45
         });
-        bigStripes.addTo(_map);
 
         circle = new L.Circle(new L.LatLng(mapCenter.lat, mapCenter.lng + 0.02), 400.0, {
             fillPattern: bigStripes,

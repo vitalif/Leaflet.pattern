@@ -48,7 +48,6 @@ Pre-Built patterns are just an easier way to use some common patterns.  Pre-Buil
 
 <code>
 var stripes = new L.StripePattern({options});
-stripes.addTo(map);
 </code>
 
 **Options**
@@ -153,7 +152,6 @@ Once the paths are defined you can use them by adding them to a Pattern.
 <code>
 var pattern = new L.Pattern({options});
 pattern.addShape(shape);
-pattern.addTo(map);
 </code>
 
 Finally you can now use the pattern in the fill pattern property of any Path in leaflet.

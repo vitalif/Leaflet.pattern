@@ -232,6 +232,7 @@ if (L.SVG) {
             this._superUpdateStyle(layer);
 
             if (layer.options.fill && layer.options.fillPattern) {
+                layer.options.fillPattern.addTo(this._map);
                 layer._path.setAttribute('fill', 'url(#' + L.stamp(layer.options.fillPattern) + ")");
             }
         }
@@ -245,6 +246,7 @@ else {
             this._superUpdateStyle();
 
             if (this.options.fill && this.options.fillPattern) {
+                this.options.fillPattern.addTo(this._map);
                 this._path.setAttribute('fill', 'url(#' + L.stamp(this.options.fillPattern) + ")");
             }
         }
